@@ -12,50 +12,81 @@
         <div class="card-body">
         <form>
             <div class="mb-3">
-                <label for="edad" class="form-label">Edad:</label>
-                <input type="number" id="edad" name="edad" class="form-control" placeholder="Ingresa tu edad">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312z"/>
+                </svg>
+                
+                <label for="edad" class="form-label"> Edad:</label>
+                <!-- evitar valores negativos con min y validación JS -->
+                <input type="number" id="edad" name="edad" class="form-control" placeholder="Ingresa tu edad" min="0" step="1">
             </div>
 
             <div class="mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-2-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"/>
+                </svg>
                 <label for="pais" class="form-label">País de nacimiento:</label>
-                <input type="text" id="pais" name="pais" class="form-control"placeholder="Ingresa tu país de nacimiento">
+                <!-- se usa datalist para sugerencias, se actualiza dinámicamente mediante JavaScript -->
+                <input type="text" id="pais" name="pais" class="form-control" placeholder="Ingresa tu país de nacimiento" list="paisesList">
+                <datalist id="paisesList"></datalist>
             </div>
 
             <div class="mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-3-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-8.082.414c.92 0 1.535.54 1.541 1.318.012.791-.615 1.36-1.588 1.354-.861-.006-1.482-.469-1.54-1.066H5.104c.047 1.177 1.05 2.144 2.754 2.144 1.653 0 2.954-.937 2.93-2.396-.023-1.278-1.031-1.846-1.734-1.916v-.07c.597-.1 1.505-.739 1.482-1.876-.03-1.177-1.043-2.074-2.637-2.062-1.675.006-2.59.984-2.625 2.12h1.248c.036-.556.557-1.054 1.348-1.054.785 0 1.348.486 1.348 1.195.006.715-.563 1.237-1.342 1.237h-.838v1.072h.879Z"/>
+                </svg>
                 <label for="ingresos" class="form-label">Ingresos mensuales:</label>
                 <input type="number" id="ingresos" name="ingresos" class="form-control"placeholder="Ingresa el monto mensual">
             </div>
 
             <div class="mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-4-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M7.519 5.057c-.886 1.418-1.772 2.838-2.542 4.265v1.12H8.85V12h1.26v-1.559h1.007V9.334H10.11V4.002H8.176zM6.225 9.281v.053H8.85V5.063h-.065c-.867 1.33-1.787 2.806-2.56 4.218"/>
+                </svg>
                 <label for="buro" class="form-label">Buró de crédito:</label>
                 <input type="text" id="buro" name="buro" placeholder="Bueno, regular, malo" class="form-control">
             </div>
 
             <div class="mb-3 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-5-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z"/>
+                </svg>
                 <label for="score" class="form-label">Score:</label>
-                <input type="range" id="score" name="score" min="400" max="600" class="form-range mx-auto d-block w-75">
+                <input type="range" id="score" name="score" min="0" max="1000" value="0" class="form-range mx-auto d-block w-75">
                 <!-- Mostrar el valor actual del score -->
-                <span id="scoreValue" class="d-block fw-bold mt-2">600</span>
+                <span id="scoreValue" class="d-block fw-bold mt-2">1000</span>
             </div>
 
             <div class="mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-6-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.21 3.855c-1.868 0-3.116 1.395-3.116 4.407 0 1.183.228 2.039.597 2.642.569.926 1.477 1.254 2.409 1.254 1.629 0 2.847-1.013 2.847-2.783 0-1.676-1.254-2.555-2.508-2.555-1.125 0-1.752.61-1.98 1.155h-.082c-.012-1.946.727-3.036 1.805-3.036.802 0 1.213.457 1.312.815h1.29c-.06-.908-.962-1.899-2.573-1.899Zm-.099 4.008c-.92 0-1.564.65-1.564 1.576 0 1.032.703 1.635 1.558 1.635.868 0 1.553-.533 1.553-1.629 0-1.06-.744-1.582-1.547-1.582"/>
+                </svg>
                 <label for="monto" class="form-label">Monto del préstamo:</label>
                 <input type="number" id="monto" name="monto" class="form-control"placeholder="Ingresa el monto del préstamo">
             </div>
 
             <div class="mb-3 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-7-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.37 5.11h3.972v.07L6.025 12H7.42l3.258-6.85V4.002H5.369v1.107Z"/>
+                </svg>
                 <label for="meses" class="form-label">Número de meses:</label>
                 <!-- Slider que avanza de 12 en 12 meses -->
-                <input type="range" id="meses" name="meses" min="12" max="120" step="12" class="form-range mx-auto d-block w-75"placeholder="Ingresa el número de meses">
+                <input type="range" id="meses" name="meses" min="12" max="120" step="12" value="0" class="form-range mx-auto d-block w-75"placeholder="Ingresa el número de meses">
                 <span id="mesesValue" class="d-block fw-bold mt-2">12</span>
             </div>
 
             <div class="mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-8-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-5.03 1.803c0-1.248-.943-1.84-1.646-1.992v-.065c.598-.187 1.336-.72 1.336-1.781 0-1.225-1.084-2.121-2.654-2.121s-2.66.896-2.66 2.12c0 1.044.709 1.589 1.33 1.782v.065c-.697.152-1.647.732-1.647 2.003 0 1.39 1.19 2.344 2.953 2.344 1.77 0 2.989-.96 2.989-2.355Zm-4.347-3.71c0 .739.586 1.255 1.383 1.255s1.377-.516 1.377-1.254c0-.733-.58-1.23-1.377-1.23s-1.383.497-1.383 1.23Zm-.281 3.645c0 .838.72 1.412 1.664 1.412.943 0 1.658-.574 1.658-1.412 0-.843-.715-1.424-1.658-1.424-.944 0-1.664.58-1.664 1.424"/>
+                </svg>
                 <label for="tasaRef" class="form-label">Tasa de interés referencia:</label>
                 <input type="number" step="0.01" id="tasaRef" name="tasaRef" class="form-control"placeholder="Ingresa el interes">
             </div>
 
             <div class="mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-9-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-8.223 4.146c2.104 0 3.123-1.464 3.123-4.3 0-3.147-1.459-4.014-2.97-4.014-1.63 0-2.871 1.02-2.871 2.73 0 1.706 1.171 2.667 2.566 2.667 1.06 0 1.7-.557 1.934-1.184h.076c.047 1.67-.475 3.023-1.834 3.023-.71 0-1.149-.363-1.248-.72H5.258c.094.908.926 1.798 2.52 1.798Zm.118-3.972c.808 0 1.535-.528 1.535-1.594s-.668-1.676-1.56-1.676c-.838 0-1.517.616-1.517 1.659 0 1.072.708 1.61 1.54 1.61Z"/>
+                </svg>
                 <label for="tasaAnual" class="form-label">Tasa de interés anual:</label>
                 <input type="number" step="0.01" id="tasaAnual" name="tasaAnual" class="form-control"placeholder="Ingresa la tasa anual">
             </div>
@@ -65,6 +96,8 @@
         </div>
         </div>
     </center>
+    <!-- zona donde se mostrará la tabla de amortización, fuera de la tarjeta -->
+    <div id="resultados" class="mt-4 mx-auto" style="max-width:480px;"></div>
     <script>
         // Mostrar el valor del slider score debajo del control
         const scoreInput = document.getElementById('score');
@@ -85,8 +118,8 @@
             let status = '';
             let borderClass = '';
             let textClass = '';
-            if (v >= 550) { status = 'Bueno'; borderClass = 'border-success'; textClass = 'text-success'; }
-            else if (v >= 450) { status = 'Regular'; borderClass = 'border-warning'; textClass = 'text-warning'; }
+            if (v >= 750) { status = 'Bueno'; borderClass = 'border-success'; textClass = 'text-success'; }
+            else if (v >= 350) { status = 'Regular'; borderClass = 'border-warning'; textClass = 'text-warning'; }
             else { status = 'Malo'; borderClass = 'border-danger'; textClass = 'text-danger'; }
 
             // poner valor en el input y aplicar clases de Bootstrap
@@ -110,6 +143,89 @@
         // valor inicial
         updateMeses();
         mesesInput.addEventListener('input', updateMeses);
+
+        // Autocompletar país: lista base y filtrado por substring
+        const paisInput = document.getElementById('pais');
+        const datalist = document.getElementById('paisesList');
+        const paises = [
+            "Afganistán","Albania","Alemania","Andorra","Angola","Antigua y Barbuda","Arabia Saudita","Argelia","Argentina","Armenia",
+            "Australia","Austria","Azerbaiyán","Bahamas","Baréin","Bangladés","Barbados","Bielorrusia","Bélgica","Belice",
+            "Benín","Bhután","Bolivia","Bosnia y Herzegovina","Botsuana","Brasil","Brunéi","Bulgaria","Burkina Faso","Burundi",
+            "Cabo Verde","Camboya","Camerún","Canadá","Catar","Chad","Chile","China","Chipre","Colombia","Comoras","Congo","Corea del Norte",
+            "Corea del Sur","Costa de Marfil","Costa Rica","Croacia","Cuba","Dinamarca","Dominica","Ecuador","Egipto","El Salvador","Emiratos Árabes Unidos"
+            ,"Eritrea","Eslovaquia","Eslovenia","España","Estados Unidos","Estonia","Eswatini","Etiopía","Filipinas","Finlandia","Fiyi","Francia","Gabón","Gambia",
+            "Georgia","Ghana","Granada","Grecia","Guatemala","Guinea","Guinea-Bisáu","Guinea Ecuatorial","Guyana","Haití","Honduras","Hungría","India","Indonesia","Irak",
+            "Irán","Irlanda","Islandia","Islas Marshall","Islas Salomón","Israel","Italia","Jamaica","Japón","Jordania","Kazajistán","Kenia","Kirguistán","Kiribati","Kuwait",
+            "Laos","Lesoto","Letonia","Líbano","Liberia","Libia","Liechtenstein","Lituania","Luxemburgo","Macao","Madagascar","Malasia","Malaui","Maldivas","Malta","Marruecos",
+            "Mauricio","Mauritania","México","Micronesia","Moldavia","Mónaco","Mongolia","Montenegro","Mozambique","Myanmar","Namibia","Nauru","Nepal","Nicaragua","Níger","Nigeria",
+            "Noruega","Nueva Zelanda","Omán","Países Bajos","Pakistán","Palaos","Panamá","Papúa Nueva Guinea","Paraguay","Perú","Polonia","Portugal","Reino Unido","República Centroafricana",
+            "República Checa","República del Congo","República Democrática del Congo","República Dominicana","Ruanda","Rumanía","Rusia","Samoa","San Cristóbal y Nieves","San Marino",
+            "San Vicente y las Granadinas","Santa Lucía","Santo Tomé y Príncipe","Senegal","Serbia","Seychelles","Sierra Leona","Singapur","Siria","Somalia","Sri Lanka","Suazilandia","Sudáfrica",
+            "Sudán","Sudán del Sur","Suecia","Suiza","Surinam","Tailandia","Tanzania","Tayikistán","Timor Oriental","Togo","Tonga","Trinidad y Tobago","Túnez","Turkmenistán","Turquía","Tuvalu","Ucrania",
+            "Uganda","Uruguay","Uzbekistán","Vanuatu","Ciudad del Vaticano","Venezuela","Vietnam","Yemen","Yibuti","Zambia","Zimbabue"
+        ];
+
+        // inicializa el datalist con todos los países
+        function poblarDatalist(lista) {
+            datalist.innerHTML = '';
+            lista.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p;
+                datalist.appendChild(opt);
+            });
+        }
+        poblarDatalist(paises);
+
+        // filtrar cada vez que el usuario escribe
+        paisInput.addEventListener('input', function() {
+            const val = this.value.toLowerCase();
+            const filtrados = paises.filter(p => p.toLowerCase().includes(val));
+            poblarDatalist(filtrados);
+        });
+
+        // Escuchar envío del formulario para construir tabla de amortización
+        const form = document.querySelector('form');
+        const resultados = document.getElementById('resultados');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            resultados.innerHTML = '<p>Cargando tasas de Banxico...</p>';
+
+            const monto = parseFloat(document.getElementById('monto').value) || 0;
+            const meses = parseInt(document.getElementById('meses').value) || 0;
+
+            // clave de serie de tasa de interés de referencia (ejemplo)
+            const serie = 'SF43718'; // puede cambiar según necesidad
+            const apiKey = 'd8ee5d8b65a09c33a395d3ee114db8512de76040455eabf3b6bc97bc864e97fc'; // reemplaza con tu token
+
+            fetch(`https://www.banxico.org.mx/SieAPIRest/service/v1/series/${serie}/datos/oportuno?token=${apiKey}`)
+                .then(res => res.json())
+                .then(data => {
+                    const dato = data?.bmx?.series?.[0]?.datos?.[0]?.dato;
+                    if (!dato) throw new Error('No se obtuvo la tasa');
+                    const tasaAnual = parseFloat(dato);
+                    const tasaMensual = tasaAnual / 100 / 12;
+                    generarTabla(monto, tasaMensual, meses);
+                })
+                .catch(err => {
+                    resultados.innerHTML = '<p class="text-danger">Error al obtener tasa: ' + err.message + '</p>';
+                    console.error(err);
+                });
+        });
+
+        function generarTabla(monto, tasaMes, meses) {
+            let html = '<table class="table table-bordered table-sm"><thead><tr><th>Mes</th><th>Saldo</th><th>Pago</th><th>Interés</th><th>Capital</th></tr></thead><tbody>';
+            let saldo = monto;
+            const pago = tasaMes > 0 ? monto * (tasaMes / (1 - Math.pow(1 + tasaMes, -meses))) : monto / meses;
+            for (let i = 1; i <= meses; i++) {
+                const interes = saldo * tasaMes;
+                const capital = pago - interes;
+                saldo -= capital;
+                html += `<tr><td>${i}</td><td>${saldo.toFixed(2)}</td><td>${pago.toFixed(2)}</td><td>${interes.toFixed(2)}</td><td>${capital.toFixed(2)}</td></tr>`;
+            }
+            html += '</tbody></table>';
+            resultados.innerHTML = html;
+        }
     </script>
 </body>
 </html>
