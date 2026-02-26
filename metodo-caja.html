@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<style>
+  .contenedor {
+    /* Contenedor principal como flexbox */
+    display: flex;
+    width: 1000px;
+    height: 100px;
+    background-color: rgb(0, 255, 55);
+
+    /* Modelo de Caja */
+    padding: 2px;
+    border: 0px solid rgb(255, 255, 255);
+    margin: 0px;
+    /* Importante: Mantiene el tamaño total incluyendo padding/border */
+    box-sizing: border-box;
+  }
+
+  .contenedor .subcaja {
+    flex: 1;                /* cada subcaja ocupa 1/4 del ancho */
+    border: 1px solid rgb(0, 0, 0); /* línea divisoria para visualizar */
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px; /* espacio entre subcajas */
+
+  }
+
+  .caja.central {
+    width: 300px;
+    height: 200px;
+    background-color: rgb(2, 2, 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .caja.central .contenido-central {
+    width: 150px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <div class="subcaja">1</div>
+    <div class="subcaja">2</div>
+    <div class="subcaja">3</div>
+    <div class="subcaja">4</div>
+  </div>
+
+  <div class="caja central">
+    <div class="contenido-central"> Hola mundo </div>
+  </div>
+
+</body>
+</html>
